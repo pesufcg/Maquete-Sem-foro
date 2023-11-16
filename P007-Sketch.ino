@@ -1,12 +1,12 @@
-#define pin1Vm 18
-#define pin1Am 5
-#define pin1Vd 17
+#define pin1Vm 2
+#define pin1Am 3
+#define pin1Vd 4
 
 #define pinB 16 //Botão de "acessibilidade"
 
-#define pin2Vm 4
-#define pin2Am 2
-#define pin2Vd 15
+#define pin2Vm 5
+#define pin2Am 6
+#define pin2Vd 7
 
 #define pinB2 19 //Botão de "acessibilidade"
 
@@ -40,9 +40,12 @@ void estadoSemaforo(){
           digitalWrite(pin2Vd, LOW); //vd2
           digitalWrite(pin2Am, LOW); //am2
         
-          digitalWrite(pin1Vd, HIGH); //VD1 
+          digitalWrite(pin1Vd, HIGH); //VD1
+          Serial.println("Verde 1"); 
+
           digitalWrite(pin2Vm, HIGH); //VM2             
-          
+          Serial.print("/ Vermelho 2");
+
           delay(3000);
           break;
       case 2: //1Am - 2Vm
@@ -51,8 +54,11 @@ void estadoSemaforo(){
           digitalWrite(pin2Vd, LOW);
           digitalWrite(pin2Am, LOW);
 
-          digitalWrite(pin1Am, HIGH);                 
-          digitalWrite(pin2Vm, HIGH);                 
+          digitalWrite(pin1Am, HIGH);
+          Serial.println("Amarelo 1");
+
+          digitalWrite(pin2Vm, HIGH);
+          Serial.print("/ Vermelho 2");                 
           delay(1500);
           break;
       case 3: //1Vm - 2Vd
@@ -61,8 +67,10 @@ void estadoSemaforo(){
           digitalWrite(pin2Am, LOW);
           digitalWrite(pin2Vm, LOW);
 
-          digitalWrite(pin1Vm, HIGH);                 
+          digitalWrite(pin1Vm, HIGH);
+          Serial.println("Vermelho 1");                 
           digitalWrite(pin2Vd, HIGH);                 
+          Serial.print("/ Verde 2");
           delay(3000);
           break;
       case 4: //1Vm - 2Am
@@ -71,8 +79,10 @@ void estadoSemaforo(){
           digitalWrite(pin2Vd, LOW);
           digitalWrite(pin2Vm, LOW);
 
-          digitalWrite(pin1Vm, HIGH);                 
-          digitalWrite(pin2Am, HIGH);                 
+          digitalWrite(pin1Vm, HIGH);
+          Serial.println("Vermelho 1");                 
+          digitalWrite(pin2Am, HIGH);
+          Serial.print("/ Amarelo 2");                 
           delay(1500);
           break;
         if (i == 4){
